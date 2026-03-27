@@ -1,0 +1,105 @@
+.hero {
+  background: radial-gradient(circle at 20% 50%, rgba(30, 58, 138, 1) 0%, rgba(15, 23, 42, 1) 100%), 
+              url('https://images.unsplash.com/photo-1474487024263-ad2267b93708?auto=format&fit=crop&q=60&w=1000');
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 8rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  max-width: 1100px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.heroContent h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.heroContent p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-bottom: 4rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.searchForm {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  color: var(--text-main);
+  text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.formGroup label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.formGroup input {
+  font-size: 1rem;
+}
+
+.searchBtn {
+  background: var(--secondary);
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: var(--shadow-md);
+}
+.searchBtn:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .searchForm {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .searchBtn {
+    margin-top: 0;
+    height: 48px;
+    padding: 0 1.5rem;
+    flex: 0 0 auto;
+  }
+}

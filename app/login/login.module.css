@@ -1,0 +1,74 @@
+.authContainer {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--bg);
+}
+
+.authCard {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 3rem;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+}
+
+.authHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.authHeader h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+.authHeader p {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.formGroup input {
+  padding: 0.875rem;
+  font-size: 1rem;
+}
+
+.submitBtn {
+  background: var(--primary);
+  color: white;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.submitBtn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
