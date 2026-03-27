@@ -1,0 +1,23 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Empty State */
+.noResults {
+  text-align: center;
+  padding: 5rem 2.5rem;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.noResults h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* List layout and ticket cards handled via inline styles in page.js for speed */
+/* This module is primarily for global layout overrides in the bookings dashboard */

@@ -97,18 +97,24 @@ export const getSavedTrains = () => {
   if (typeof window === 'undefined') return initialTrains;
   const saved = localStorage.getItem('trains_db');
   if (saved) return JSON.parse(saved);
-  localStorage.setItem('trains_db', JSON.stringify(initialTrains));
-  return initialTrains;
+// PERSISTENCE UTILS FOR ADMIN
+export const addTrain = (train) => {
+  const trains = getSavedTrains();
+  const updated = [...trains, train];
+  localStorage.setItem('trains_db', JSON.stringify(updated));
+  return updated;
 };
 
-export const updateTrainSeats = (trainId, count) => {
-  const currentTrains = getTrains();
-  const updated = currentTrains.map(t => {
-    if (t.id === trainId) {
-      return { ...t, seats: Math.max(0, t.seats - count) };
-    }
-    return t;
-  });
+export const deleteTrain = (id) => {
+  const trains = getSavedTrains();
+  const updated = trains.filter(t => t.id !== id);
+  localStorage.setItem('trains_db', JSON.stringify(updated));
+  return updated;
+};
+
+export const updateTrainSeats = (id, count) => {
+  const trains = getSavedTrains();
+  const updated = trains.map(t => t.id === id ? { ...t, seats: Math.max(0, t.seats - count) } : t);
   localStorage.setItem('trains_db', JSON.stringify(updated));
   return updated;
 };
